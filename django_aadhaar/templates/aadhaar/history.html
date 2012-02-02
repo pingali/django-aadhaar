@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% load accounttags %} 
+
+{% block title %}{{request.user.username}}{% endblock %}
+
+{% block content %}
+
+<h1>Authentication History of {{request.user.username}}!</h1>
+
+
+<div class="content_container">
+	<table class="data">
+		<tr>
+			<td>Account Information</td>
+			<td>Username: {{request.user.username}}<br>
+			  Email:{{request.user.email}}<br> 
+			  Date Joined:  {{request.user.date_joined|timesince}} ago
+			</td>
+		</tr>
+		
+		{% if authsummary == None %}
+		<tr>
+			<td>Verified</td><td>False</td>
+		</tr>
+		{% else %}
+		<tr>
+			<td>Verified</td>
+			<td>{{authsummary.verified}}</td>
+		</tr>
+		<tr>
+			<td>Aadhaar</td>
+			<td>{{aadhaar.aadhaar_id}}</td>
+		</tr>
+		<tr>
+			<td>First Authentication</td>
+			<td>{{authsummary.first_authentication}}</td>
+		</tr>
+		<tr>
+			<td>Last Successful Authentication</td>
+			<td>{{authsummary.last_successful_authentication}}</td>
+		</tr>
+		<tr>
+			<td>Last Unsuccessful Authentication</td>
+			<td>{{authsummary.last_unsuccessful_authentication}}</td>
+		</tr>
+		<tr>
+			<td>Successful authentications</td>
+			<td>{{authsummary.num_successful_authentications}}<br>
+			  {% if authsummary.num_successful_authentications > 0 %} (last one was {{authsummary.last_successful_authentication|timesince}} ago) {% endif %}</td>
+		</tr>
+		<tr>
+			<td>Unsuccessful authentications</td>
+			<td>{{authsummary.num_unsuccessful_authentications}} 
+			  {% if authsummary.num_unsuccessful_authentications > 0 %} (last one was {{authsummary.last_unsuccessful_authentication|timesince }} ago) {% endif %}</td>
+		</tr>
+		{% endif %}
+	</table>
+	{% if authdetails.size != 0 %}
+	<table class="data">
+		<tr>
+			<td>Txn</td>
+			<td>Timestamp</td>
+			<td>Ret</td>
+			<td>Err</td>
+			<td>Latency (secs)</td>
+		</tr>	  {% for detail in authdetails %}
+		<tr>
+			<td><a href="{{detail.get_absolute_url}}">{{detail.txn|truncatelen:30}}</a></td>
+			<td>{{detail.ts}}</td>
+			<td>{{detail.ret}}</td>
+			<td>{{detail.err}}</td>
+			<td>{{detail.latency|floatformat:2}}</td>
+		</tr>
+	  {% endfor %} 
+	</table>
+	{% endif %} 
+<p/>
+</div>
+
+
+
+{% endblock %}

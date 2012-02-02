@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load accounttags %} 
+
+{% block content %}
+
+<h1>Authentication Transaction Details</h1>
+<div class="content_container">
+  <span style="float:right;">
+    <a href="/aadhaar/history">History</a>
+  </span> 
+	{% if detail != None %}
+	<table class="data">
+		<tr>
+			<td>Txn</td>
+			<td>{{detail.txn}}</td>
+		</tr>
+		<tr>
+			<td>Latency</td>
+			<td>{{detail.latency}} secs</td>
+		</tr>
+		<tr>
+			<td>Timestamp</td>
+			<td>{{detail.ts}}</td>
+		</tr>
+		<tr>
+			<td>Ret</td>
+			<td>{{detail.ret}}</td>
+		</tr>
+		<tr>
+			<td>Err</td>
+			<td>{{detail.err}}</td>
+		</tr>
+		<tr>
+			<td>Code</td>
+			<td>{{detail.code}}</td>
+		</tr>
+		<tr>
+			<td>XML</td>
+			<td>{{detail.get_response|wrap:40}}</td>
+		</tr>
+	</table>
+	{% endif %} 
+</div>
+
+
+
+{% endblock %}

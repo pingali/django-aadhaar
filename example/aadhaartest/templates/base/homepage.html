@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Aadhaartest!{% endblock %}
+
+{% block content %}
+
+<h1>AadhaarTest</h1>
+
+<div class="content_container">
+
+  <p> Example project to test django-aadhaar module</p>
+
+  <p>Step 1: <a href="/account/signup">Sign up with AadhaarTest </a>. </p>
+
+  <p> Step 2: <a href="/account/login">Login</a> </p> 
+
+  <p>Step 3: Authenticate
+  <a href="/aadhaar/authenticate/personal">yourself</a> and your
+  <a href="/aadhaar/authenticate/address">address</a> AadhaarTest
+  remembers this information and shares it with aadhaar-enabled
+  service providers as and when you authorize.</p>
+
+</div>
+
+
+
+{% endblock %}

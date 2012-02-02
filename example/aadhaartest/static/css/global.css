@@ -1,0 +1,109 @@
+body {
+	font-family: 'Cabin', arial, serif;
+	line-height:150%;
+}
+
+h1 {
+	font-size:48px;
+	color:#666666;
+	text-align:center;
+	margin: 30px auto 0 auto;
+}
+h2 {
+	font-size:16px;
+	color:#666666;
+	text-align:center;
+	margin: 30px auto 0 auto;
+}
+
+a {
+	text-decoration:none;
+}
+
+p {
+	padding:0 0 15px 0;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+em {
+	color:#999999;
+	font-style:italic;
+}
+
+.content_container, .error_container {
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+    background: none repeat scroll 0 0 #EFEFEF;
+    margin: 30px auto 0 auto;
+    padding: 15px 15px 0 15px;
+    text-align: left;
+	width:770px;
+}
+
+.error_container {
+	background-color:#FFdFdF;
+}
+
+.form_container {
+	margin:30px auto 0 auto;
+	width:800px;
+}
+
+#header {
+	position:absolute;
+	top:10px;
+	right:0px;
+}
+
+#header li {
+	float:right;
+	margin-right:20px;
+}
+
+#content {
+	margin:100px auto 0 auto;
+}
+
+table.data {
+	width:100%;
+	font-size:12px;
+	margin:0 0 15px 0;
+	color:#333333;
+}
+table.data th, table.data td {
+	padding:10px;
+}
+table.data th {
+	background: white;
+	border:1px solid #CCCCCC;
+	font-weight:bold;
+	color:black;
+	text-align:center;
+}
+table.data td {
+	border:1px solid #CCCCCC;
+	text-align:center;
+	vertical-align:middle;
+}
+table.data td.right {
+	text-align:right;
+	font-weight:bold;
+	color:black;
+}
+table.data td.left {
+	text-align:left;
+}
+
+
+ul.messages { border:1px solid #C8DCC2; width: 50%;  margin:0 auto; text-align:center; margin:1em 0; }
+ul.messages li.debug{ background: #EEFAEA; padding: 0.5em, 0 0.5em 0; align:center; list-style: none;}
+ul.messages li.info{ background: #EEFAEA; padding: 0.5em, 0 0.5em 0; list-style: none;}
+ul.messages li.success{ background: #EEFAEA; padding: 0.5em, 0 0.5em 0; list-style: none;}
+ul.messages li.warning{ background: #FF3333; padding: 0.5em, 0 0.5em 0; list-style: none;}
+ul.messages  li.error{ background: #FF3333; padding: 5px, 0 5px 0; align:center; list-style: none;}
+ul.messages li { background: none; padding-left: 5px; padding-top: 8px; padding-bottom: 8px;font-size: 1.2em; }
+
+
