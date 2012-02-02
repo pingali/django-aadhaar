@@ -138,3 +138,8 @@ Development
     template files from django-aadhaar/django_aadhaar/templates/aadhaar 
     and edit them to suit your needs. 
    
+Acknowledgements 
+----------------
+
+* TCS and Prof. Harrick Vin for supporting the development 
+* UIDAI team for technical help and input 
