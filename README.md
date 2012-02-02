@@ -88,7 +88,7 @@ django_aadhaar to. The module comes with an example application - [django-aadhaa
 * Specify the authentication configuration file to settings.py 
 
 >       ...
->       AADHAAR_CONFIG_FILE=findpath('fixtures/auth.cfg')
+>       AADHAAR_CONFIG_FILE='...fixtures/auth.cfg'
 >       ...
 
 * Sync the database 
