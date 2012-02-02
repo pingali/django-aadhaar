@@ -85,6 +85,11 @@ django_aadhaar to. The module comes with an example application - [django-aadhaa
 >       
 >       $ python manage.py aadhaarinit 
 
+* Specify the authentication configuration file to settings.py 
+
+>       ...
+>       AADHAAR_CONFIG_FILE=findpath('fixtures/auth.cfg')
+>       ...
 
 * Sync the database 
 
@@ -99,3 +104,37 @@ Known Issues
 1. dateutil  iter() returned non-iterator of type _timelex
 
 	Make sure you install python-dateutil==1.5 
+
+2. Templatetag error involving account tags 
+
+    Ideally the templatetag path should be updated based on the
+    INSTALLED_APPS to include all module-specific templatetags. But
+    sometimes we have to do it manually. Add the following at the end
+    of the settings.py. 
+
+>       	
+>       # => Hack to include the template tags
+>       for mod in INSTALLED_APPS + ('aadhaartest',):
+>       try: 
+>           path = __import__(mod + '.templatetags', {},{}, ['']).__path__
+>           templatetags.__path__.extend(path)
+>       except: 
+>           pass 
+>       
+
+Development
+-----------
+
+1. Feature requests 
+   
+    Please
+    [raise a ticket](https://github.com/pingali/django-aadhaar/issues)
+    to let me know what feature you would like to see.
+
+2. Extending/replacing the templates 
+
+    First, insert your template path at the beginning of the template
+    search path. Then, create an *aadhaar* directory, copy the existing 
+    template files from django-aadhaar/django_aadhaar/templates/aadhaar 
+    and edit them to suit your needs. 
+   
