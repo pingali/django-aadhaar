@@ -53,6 +53,19 @@ other versions of Ubuntu.
 >       $ sudo easy_install django-uni-form 
 >       $ sudo easy_install python-dateutil==1.5 
 
+* Install django-aadhaar 
+
+>       $ wget -O django-aadhaar.tgz https://github.com/pingali/django-aadhaar/tarball/master
+>       $ tar zxvf django-aadhaar.tgz 
+>       $ cd django-aadhaar
+>       $ sudo python setup.py install 
+
+Test the installation and make sure that django_aadhaar has installed correctly. 
+
+>       $ python 
+>         >>> import django_aadhaar 
+>         >>> 
+
 The next few steps depend on the application you are trying to add
 django_aadhaar to. The module comes with an example application - [django-aadhaar/example/aadhaartest](https://github.com/pingali/django-aadhaar/tree/master/example/aadhaartest) that already has django_aadhaar installed.  
 
